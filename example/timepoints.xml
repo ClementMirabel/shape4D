@@ -1,0 +1,83 @@
+<?xml version="1.0">
+<experiment name="MichiganCase">
+ <algorithm name="RegressionVelocity">
+     <source>
+         <input>
+             <shape> /home/mirclem/Desktop/shape4D/example/inputVTKs/TimePoint1.vtk </shape>
+         </input>
+         <sigmaV> 30.0 </sigmaV>
+         <gammaR> 0.01 </gammaR>
+         <t0> 10 </t0>
+         <tn> 45 </tn>
+         <T> 60 </T>
+         <kernelType>   p3m   </kernelType>
+         <estimateBaseline>   0   </estimateBaseline>
+         <useFista>   1   </useFista>
+         <maxIters> 50 </maxIters>
+         <breakRatio> 1e-6 </breakRatio>
+     </source>
+     <targets>
+         <target>
+             <shape> /home/mirclem/Desktop/shape4D/example/inputVTKs/TimePoint4.vtk </shape>
+             <type> SURFACE </type>
+             <tris> 0 </tris>
+             <sigmaW> 30.0 </sigmaW>
+             <timept> 45 </timept>
+             <weight> 1.0 </weight>
+         </target>
+     </targets>
+ </algorithm>
+	<algorithm name="RegressionAccel">
+	    <source>
+	        <input>
+		       <shape> /home/mirclem/Desktop/shape4D/example/inputVTKs/TimePoint1.vtk  </shape>
+         </input>
+         <sigmaV> 10.0 </sigmaV>
+         <gammaR> 0.01 </gammaR>
+	        <t0> 10 </t0>
+	        <tn> 45 </tn>
+	        <T> 60 </T>
+	        <useInitV0> 1 </useInitV0>
+         <useFista>   0   </useFista>
+         <v0weight> 1.0 </v0weight>
+         <kernelType> p3m </kernelType>
+         <estimateBaseline> 0 </estimateBaseline>
+         <breakRatio> 1e-8 </breakRatio>
+         <maxIters> 5500 </maxIters>
+	        <output>
+		       <saveProgress> 200 </saveProgress>
+		       <dir> /home/mirclem/Desktop/shape4D/example/output/ </dir>
+		       <prefix> jaw_test </prefix>
+		   </output>
+		</source>
+	<targets>
+ <target>
+     <shape> /home/mirclem/Desktop/shape4D/example/inputVTKs/TimePoint2.vtk  </shape>
+     <type> SURFACE </type>
+     <tris> 0 </tris>
+     <sigmaW> 4.0 </sigmaW>
+     <timept> 20
+ </timept>
+     <weight> 1.0 </weight>
+ </target>
+ <target>
+     <shape> /home/mirclem/Desktop/shape4D/example/inputVTKs/TimePoint3.vtk  </shape>
+     <type> SURFACE </type>
+     <tris> 0 </tris>
+     <sigmaW> 4.0 </sigmaW>
+     <timept> 27
+ </timept>
+     <weight> 1.0 </weight>
+ </target>
+ <target>
+     <shape> /home/mirclem/Desktop/shape4D/example/inputVTKs/TimePoint4.vtk  </shape>
+     <type> SURFACE </type>
+     <tris> 0 </tris>
+     <sigmaW> 4.0 </sigmaW>
+     <timept> 45
+ </timept>
+     <weight> 1.0 </weight>
+ </target>
+	</targets>
+	</algorithm>
+</experiment>
