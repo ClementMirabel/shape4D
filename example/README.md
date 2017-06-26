@@ -2,8 +2,8 @@
 ## Preprocessing
 
 Before running the shape4D code, we need to generate a xml file that will contain all the information needed for the computation.
-
-1. Create/Update a csv file with in the first column the basename of all the different time points and in the second column the age corresponding to the file.
+1. (optional) Convert input files to ASCII vtk files. You can load your stl/vtk files in [Paraview](https://www.paraview.org/download/) and save them as VTK and then ASCII.
+2. Create/Update a csv file with in the first column the basename of all the different time points and in the second column the age corresponding to the file.
 
 **** | **A** | **B**
 --- | --- | ---
@@ -12,7 +12,7 @@ Before running the shape4D code, we need to generate a xml file that will contai
 **3** | TimePoint3.vtk | *27*
 **4** | TimePoint4.vtk | *45*
 
-2. Update the perl script given as example to include paths to your files. The perl script will generate an xml file which will contain information relative to the computation.
+3. Update the perl script given as example to include paths to your files. The perl script will generate an xml file which will contain information relative to the computation.
 
        line4: folder containing the vtk files
        line5: folder where the outputs will be generated
@@ -23,8 +23,9 @@ Before running the shape4D code, we need to generate a xml file that will contai
        line18: first time point age
        line19: last time point age
        line20: number of time points
+       line22: give a name to your project
        
-3. Run perl script with the command `perl process_data.pl`. The console would show the each time point age if it worked fine and the xml would be generated at the location you entered in the script.
+4. Run perl script with the command `perl process_data.pl`. The console would show the each time point age if it worked fine and the xml would be generated at the location you entered in the script.
 
 ## Build Shape4D
 1. (optional) Install CMake with `sudo apt-get install cmake` or with the [online installer](https://cmake.org/files/v3.8/cmake-3.8.2-Linux-x86_64.sh).
