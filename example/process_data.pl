@@ -19,9 +19,11 @@ $t0 = 10;
 $tn = 45;
 $numberoftp = 4;
 
+$projectname = "Shape4D-Example";
+
 open(OUTFILE, ">$outfile");
 print OUTFILE "<?xml version=\"1.0\">\n";
-print OUTFILE "<experiment name=\"MichiganCase\">\n";
+print OUTFILE "<experiment name=\"$projectname\">\n";
 print OUTFILE " <algorithm name=\"RegressionVelocity\">\n";
 print OUTFILE "     <source>\n";
 print OUTFILE "         <input>\n";
@@ -68,10 +70,9 @@ print OUTFILE "         <estimateBaseline> 0 </estimateBaseline>\n";
 print OUTFILE "         <breakRatio> 1e-8 </breakRatio>\n";
 print OUTFILE "         <maxIters> 5500 </maxIters>\n";
 print OUTFILE "	        <output>\n";
-$prefix = "jaw_test";
 print OUTFILE "		       <saveProgress> 200 </saveProgress>\n";
 print OUTFILE "		       <dir> $outpath </dir>\n";
-print OUTFILE "		       <prefix> $prefix </prefix>\n";
+print OUTFILE "		       <prefix> $projectname </prefix>\n";
 print OUTFILE "		   </output>\n";
 print OUTFILE "		</source>\n";
 print OUTFILE "	<targets>\n";
